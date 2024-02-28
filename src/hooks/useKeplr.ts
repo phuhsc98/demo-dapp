@@ -153,8 +153,8 @@ export function useKeplr({ chainInfo }: { chainInfo: IChainInfo }) {
           }
         );
 
-        console.log("result", result);
-        // signingClient.sendTokens()
+        syncAccountBalance();
+        return result;
         //
       }
     } catch (error) {
@@ -185,13 +185,19 @@ export function useKeplr({ chainInfo }: { chainInfo: IChainInfo }) {
           }),
         };
 
+        const simulateData = await signingWasmClient.simulate(
+          account.address,
+          [msgSm],
+          ""
+        );
+
         // // // Sign and broadcast the transaction
         const result3 = await signingWasmClient.signAndBroadcast(
           account.address,
           [msgSm],
           {
             amount: [{ denom: "uosmo", amount: "2587" }],
-            gas: "200000",
+            gas: `${simulateData + 5000}`,
           }
         );
         return result3;

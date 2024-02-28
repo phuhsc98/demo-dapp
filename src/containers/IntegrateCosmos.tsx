@@ -37,17 +37,13 @@ function IntegrateCosmos({}: Props) {
 
           <div>
             <h4>Transaction with wallet</h4>
-            <i>cosmos10yqr2wp40lyatnrv06zehq2df0amwzh6rqkg6a</i>
+            <i>osmo10yqr2wp40lyatnrv06zehq2df0amwzh6tm9cv0</i>
             <TransactionWithWallet
               onSubmit={async (value) => {
                 try {
-                  console.log("value", value);
-                  sendToken(value.to, value.amount);
-
-                  // const receiptRes = await sendTransaction({
-                  //   ...value,
-                  //   from: wallet.account,
-                  // });
+                  sendToken(value.to, value.amount).then((data) =>
+                    setViewTxDeliver(data)
+                  );
                 } catch (error) {}
               }}
             />
