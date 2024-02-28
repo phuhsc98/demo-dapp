@@ -30,10 +30,6 @@ export function useC98Wallet() {
       to: data.to,
       data: utf8ToHex(data.data || ""),
       value: toWei(data.amount, "ether"),
-
-      // gas: toWei("7.5", "gwei"),
-      // gasPrice: toWei("100", "gwei"),
-      // nonce: "string",
     };
 
     return c98Web3.eth.sendTransaction(txObj);
@@ -96,10 +92,10 @@ export function useC98Wallet() {
     try {
       if (isInjectedProvider) {
         // const accounts = await web3.eth.requestAccounts();
-
-        const accounts = await window.ethereum.request({
+        const accounts = await window.ethereum?.request({
           method: "eth_accounts",
         });
+
         return accounts || [];
       } else {
         throw new Error("Provider not install");

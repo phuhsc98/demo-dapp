@@ -1,0 +1,51 @@
+{
+  "chainId": "pion-1",
+  "chainName": "neutron-testnet",
+  "rpc": "https://rpc-t.neutron.nodestake.top",
+  "rest": "https://api-t.neutron.nodestake.top",
+  "bip44": {
+    "coinType": 118
+  },
+  "coinType": 118,
+  "bech32Config": {
+    "bech32PrefixAccAddr": "neutron",
+    "bech32PrefixAccPub": "neutronpub",
+    "bech32PrefixValAddr": "neutronvaloper",
+    "bech32PrefixValPub": "neutronvaloperpub",
+    "bech32PrefixConsAddr": "neutronvalcons",
+    "bech32PrefixConsPub": "neutronvalconspub"
+  },
+  "currencies": [
+    {
+      "coinDenom": "NTRN",
+      "coinMinimalDenom": "untrn",
+      "coinDecimals": 6,
+      "coinGeckoId": "unknown"
+    }
+  ],
+  "feeCurrencies": [
+    {
+      "coinDenom": "NTRN",
+      "coinMinimalDenom": "untrn",
+      "coinDecimals": 6,
+      "coinGeckoId": "unknown",
+      "gasPriceStep": {
+        "low": 0.01,
+        "average": 0.025,
+        "high": 0.03
+      }
+    }
+  ],
+  "gasPriceStep": {
+    "low": 0.01,
+    "average": 0.025,
+    "high": 0.03
+  },
+  "stakeCurrency": {
+    "coinDenom": "NTRN",
+    "coinMinimalDenom": "untrn",
+    "coinDecimals": 6,
+    "coinGeckoId": "unknown"
+  },
+  "features": []
+}

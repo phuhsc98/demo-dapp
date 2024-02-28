@@ -1,5 +1,4 @@
 /// <reference types="react-scripts" />
-/// <reference types="node_modules/web3-types" />
 
 // export type { EIP1193Provider } from "web3-types";
 
@@ -35,7 +34,7 @@ interface EIP6963ProviderDetail {
   provider: EIP1193Provider & { currentChain: string };
 }
 
-interface Window {
-  ethereum?: EIP1193Provider;
-  coin98?: any;
-}
+// interface Window {
+//   ethereum?: EIP1193Provider;
+//   coin98?: any;
+// }
